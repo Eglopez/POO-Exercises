@@ -6,6 +6,7 @@
     <title>Youtube</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
     
@@ -20,35 +21,40 @@
     </div><br><br>
 
     <div class="container-fluid">
+       <div class="row" id="videos">
         
-    </div>
+       </div>
+    </div><br><br><hr>
 
     <div class="container">
         <form id="form">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Titulo">
+                <input type="text" class="form-control" placeholder="Titulo" id="title">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Caratula">
+                <input type="text" class="form-control" placeholder="Caratula" id="cover">
             </div>
             <div class="form-group">
-                <select class="form-control" id="canal">
+                <select class="form-control" id="canal" id="canal">
+                    <option>Anime</option>
+                    <option>Deportes</option>
                 </select>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Visualizaciones">
+                <input type="text" class="form-control" placeholder="Visualizaciones" id="views">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Duracion HH:MM">
+                <input type="text" class="form-control" placeholder="Duracion HH:MM" id="time">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subido hace X horas">
+                <input type="text" class="form-control" placeholder="Subido hace X horas" id="update">
             </div>
             <div class="form-group">
-                <button class="btn btn-danger" onclick="save()">Guardar</button>
+                <button class="btn btn-danger" onclick="addVideo()">Guardar</button>
             </div>
         </form>
     </div>
 
+    <script src="js/controlador.js"></script>
 </body>
 </html>

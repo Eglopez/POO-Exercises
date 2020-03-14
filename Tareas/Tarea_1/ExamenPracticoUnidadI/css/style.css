@@ -6,3 +6,28 @@
     padding: 30px 30px 30px 30px;
 }
 
+.duration{
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+    background-color: #000000d7;
+    color: white;
+}
+
+#cont{
+    position: relative;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+#view{
+    color: gray;
+}
+
+#videos{
+    margin-bottom: auto;
+}
