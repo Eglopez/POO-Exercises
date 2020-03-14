@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Facebook</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      </nav>
+
+      <div class="container-fluid">
+         
+        
+            <form id="form" class="col-sm-12 col-lg-4" >
+                <div class="form-group"><h4>Agregar Post</h4></div>
+                <div class="form-group">
+                    <select class="form-control" id="user">
+                        <option>Luis</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea cols="30" rows="10" class="form-control" id="text"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="date">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" onclick="addPost()">Post</button>
+                </div>
+            </form>
+            <div class="row" id="post"></div> 
+         
+          
+      </div>
+
+    <script src="js/controlador.js"></script>
+</body>
+</html>
