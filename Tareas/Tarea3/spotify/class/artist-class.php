@@ -16,7 +16,11 @@
             echo $contentArtists;
         }
 
-        public static function getArtist($id){}
+        public static function getArtist($id){
+            $contentArtists = file_get_contents('../data/artistas.json');
+            $artists = json_decode($contentArtists,true);
+            echo json_encode($artists[$id]);
+        }
 
         
         public function getId()

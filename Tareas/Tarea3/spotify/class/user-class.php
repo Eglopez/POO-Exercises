@@ -19,7 +19,9 @@
         }
 
         public static function getUser($id){
-            
+            $contentUsers = file_get_contents('../data/usuarios.json');
+            $users = json_decode($contentUsers,true);
+            echo json_encode($users[$id]);
         }
     
       

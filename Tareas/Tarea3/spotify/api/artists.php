@@ -11,7 +11,7 @@
 
         case 'GET':
             if(isset($_GET['id'])){
-                Artist::getArtist();
+                Artist::getArtist($_GET['id']);
             }else{
                 Artist::getArtists();
             }
