@@ -131,17 +131,41 @@
                 break;
                 }
             }
+            $comments_content = file_get_contents('../data/comentarios.json');
+            $comments = json_encode($comments_content,true);
             $posts_content = file_get_contents('../data/post.json');
             $post = json_decode($posts_content,true);
             $post_result = array();
             for($i=0;sizeof($post);$i++){
                 if(in_array($post[$i]['codigoUsuario'],$user['siguiendo'])){
+                    $post[$i]['comentarios'] = array();
+                    for($j=0;sizeof($comments);$j++){
+                        if($post[$i]['codigoPost'] == $comments[$j][getCodigoPost]){
+                            $post[$i]['comentarios'][] = $comentarios[$j];
+                        }
+                    }
                     $post_result[] = $post[$i];
                 }
                 
             }
 
             echo json_encode($post_result);
+        }
+
+        public function savePost(){
+            $posts_content = file_get_contents('../data/posts.json');
+            $posts = json_decode($posts_content,true);
+            $post[] = array(
+                'codigoPost' => $this->codigoPost,
+                'codigoUsuarios' => $this->codigoUsuario,
+                'contenidoPost' => $this->contenidoPost, 
+                'imagen' => $this->imagen,
+                'cantidadLkes' => $this->cantidadLikes
+           );
+
+           $file = fopen('../data/posts.json','w');
+           fwrite($file,json_encode($post));
+           fclose($file);
         }
     }
 
